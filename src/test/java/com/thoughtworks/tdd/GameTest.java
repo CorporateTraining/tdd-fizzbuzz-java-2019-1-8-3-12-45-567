@@ -24,15 +24,15 @@ public class GameTest {
     @Test
     public void input_7_out_put_Whizz(){
         Game game = new Game();
-        String result = game.IsThreeMultiple(10);
-        Assert.assertEquals(result, "Buzz");
+        String result = game.IsThreeMultiple(14);
+        Assert.assertEquals(result, "Whizz");
     }
 
     @Test
     public void input_not_Multiple_out_number(){
         Game game = new Game();
         String result = game.IsThreeMultiple(11);
-        Assert.assertEquals(result, 11);
+        Assert.assertEquals(result, "11");
     }
 
 }
