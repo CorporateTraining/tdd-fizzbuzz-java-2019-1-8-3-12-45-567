@@ -1,21 +1,31 @@
 package com.thoughtworks.tdd;
 
-import java.util.Objects;
-
 public class Game {
 
-    public String IsThreeMultiple(Integer number) {
-        if(number%3 == 0){
-            return "Fizz";
+    public String gameBegins(Integer number) {
+        if (isThreeOrFiveAOrSevenMultiple(number)) {
+            return replaceThreeOrFiveAOrSeven(number);
         }
-        if(number%5 == 0){
-            return "Buzz";
-        }
-
-        if(number%7 == 0){
-            return "Whizz";
-        }
-
         return number.toString();
     }
+
+    private boolean isThreeOrFiveAOrSevenMultiple(Integer number) {
+        return number % 3 == 0 || number % 5 == 0 || number % 7 == 0;
+    }
+
+    public String replaceThreeOrFiveAOrSeven(Integer number) {
+        StringBuffer result = new StringBuffer();
+        if (number % 3 == 0) {
+            result.append("Fizz");
+        }
+        if (number % 5 == 0) {
+            result.append("Buzz");
+        }
+
+        if (number % 7 == 0) {
+            result.append("Whizz");
+        }
+        return String.valueOf(result);
+    }
+
 }
